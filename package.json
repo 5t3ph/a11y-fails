@@ -1,0 +1,19 @@
+{
+  "name": "a11y-fails",
+  "version": "1.0.0",
+  "description": "An example of what not to do for accessibility.",
+  "main": "index.js",
+  "scripts": {
+    "develop": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5t3ph/a11y-fails.git"
+  },
+  "author": "5t3ph",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
