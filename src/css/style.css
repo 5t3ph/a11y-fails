@@ -148,6 +148,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
   border: 2px solid #cd56aa;
   animation: rock 1s ease-in-out alternate forwards infinite;
 }
