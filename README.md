@@ -20,7 +20,7 @@ Fork the repo and create a pull request to submit your fixes! You can use tools 
 
 ## Check your answers
 
-See the pull request "Suggested Fixes from 5t3ph" which also includes links to WCAG and articles from accessibility experts to help understand "why" a change was necessary.
+See the pull request "[Suggested Fixes from 5t3ph](https://github.com/5t3ph/a11y-fails/pull/1)" which also includes links to WCAG and articles from accessibility experts to help understand "why" a change was necessary.
 
 Comments included in the fix PR use the following key:
 
