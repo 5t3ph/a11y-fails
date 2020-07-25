@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ✅ Resolve missing title tag -->
+    <title>a11y Fails</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -10,75 +12,99 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <ul class="nav">
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/products">Products</a></li>
-    </ul>
-    <div class="header">
+    <!-- 🚨 Added skip link -->
+    <!-- https://webaim.org/techniques/skipnav/ -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <!-- ✅ Convert div to nav landmark element -->
+    <nav class="nav">
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/products">Products</a></li>
+      </ul>
+    </nav>
+    <!-- ✅ Convert div to header landmark element -->
+    <header class="header">
       <h1><span>a11y</span> Fails</h1>
-    </div>
-    <div class="main">
-      <h3>Product List</h3>
-      <aside class="products">
-        <div class="card">
+    </header>
+    <!-- ✅ Convert div to main landmark element -->
+    <!-- 🚨 Make focusable with `tabIndex="-1" when skip link is used -->
+    <main id="main" class="main" tabIndex="-1">
+      <!-- ✅ Fix heading level ordering -->
+      <!-- 🚨 Use CSS class to reduce font size -->
+      <h2 class="h3">Product List</h2>
+      <!-- ✅🚨 Convert aside to ul element -->
+      <!-- https://inclusive-components.design/cards/ -->
+      <!-- 🚨 Add `role="list"` to keep list semantics removed by styling -->
+      <!-- https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html -->
+      <ul role="list" class="products">
+        <li class="card">
+          <!-- ✅ Add empty alt for images described by the content -->
+          <!-- https://www.w3.org/WAI/tutorials/images/decorative/ -->
           <img
             src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&h=200&q=60"
+            alt=""
           />
-          <h2>Item 1</h2>
+          <!-- ✅ Fix heading level ordering -->
+          <!-- 🚨 Use CSS class to reduce font size -->
+          <h3 class="h2">Item 1</h3>
           <p>
             Sesame snaps gummi bears macaroon sweet chocolate cake lemon drops
             donut. Marzipan lollipop gummies chocolate bar jelly gummies icing
             oat cake.
           </p>
-          <button class="button">Buy Now</button>
-        </div>
-        <div class="card">
+          <!-- 🚨 Convert button to a given intent is to navigate user -->
+          <!-- https://marcysutton.com/links-vs-buttons-in-modern-web-applications -->
+          <a class="button" href="#" aria-label="Buy Item 1 Now">Buy Now</a>
+        </li>
+        <li class="card">
           <img
             src="https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=200&q=60"
+            alt=""
           />
-          <h2>Item 2</h2>
+          <h3 class="h2">Item 2</h3>
           <p>
             Biscuit chocolate powder cheesecake powder candy canes soufflé
             lollipop. Macaroon donut danish candy canes icing.
           </p>
-          <button class="button">Buy Now</button>
-        </div>
-        <div class="card">
+          <a class="button" href="#" aria-label="Buy Item 2 Now">Buy Now</a>
+        </li>
+        <li class="card">
           <img
             src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&h=200&q=60"
+            alt=""
           />
-          <h2>Item 3</h2>
+          <h3 class="h2">Item 3</h3>
           <p>
             Caramels chocolate halvah ice cream macaroon cupcake. Chupa chups
             cotton candy lemon drops. Carrot cake brownie topping biscuit.
           </p>
-          <button class="button">Buy Now</button>
-        </div>
-      </aside>
+          <a class="button" href="#" aria-label="Buy Item 3 Now">Buy Now</a>
+        </li>
+      </ul>
 
-      <div class="form">
+      <!-- 🚨 Convert div to form element -->
+      <form class="form">
         <h2>Sign Up</h2>
 
-        <label>Name</label>
-        <input type="text" />
+        <!-- ✅ Associate label to input with `for` attribute -->
+        <label for="name">Name</label>
+        <input type="text" id="name" />
 
-        <label>Email</label>
-        <input type="email" />
+        <label for="email">Email</label>
+        <input type="email" id="email" />
 
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="3"
-          placeholder="Message"
-        ></textarea>
+        <!-- ✅ Add label vs. relying only on placeholder -->
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="3"></textarea>
 
-        <button class="button" role="button">Submit</button>
-      </div>
-    </div>
-    <div class="footer">
+        <!-- 🚨 Convert `role="button"` to "type="submit"` -->
+        <button class="button" type="submit">Submit</button>
+      </form>
+    </main>
+    <!-- ✅ Convert div to footer landmark element -->
+    <footer class="footer">
       &copy; BadA11y
-    </div>
+    </footer>
   </body>
 </html>
