@@ -15,8 +15,11 @@ There are fails of all the following:
 - users with visual impairments
 - users of assistive technology
 - users with motion sensitivities
+- users who perform keyboard interaction
 
 Fork the repo and create a pull request to submit your fixes! You can use tools like aXe but be aware that _not all issues_ are detectable via tools.
+
+For hints and to learn more about what it means to create accessible experiences, check out my article [Introduction to Web Accessibility](https://dev.to/5t3ph/introduction-to-web-accessibility-5cmp).
 
 ## Check your answers
 
