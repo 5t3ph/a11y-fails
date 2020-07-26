@@ -183,8 +183,12 @@ main:focus {
   max-width: calc(80vw - 2rem);
   margin: 5vh auto;
   display: grid;
-  grid-gap: 0.5rem;
   text-align: left;
+}
+
+/* 🎨 Improve spacing between textarea and submit button */
+.form :last-child {
+  margin-top: 2rem;
 }
 
 @keyframes rock {
@@ -236,7 +240,12 @@ textarea:focus {
 
 label {
   font-size: 0.9rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+/* 🚨 Increase spacing to improve visual recognition of labels and field groups */
+* + label {
+  margin-top: 1.75rem;
 }
 
 .footer {
