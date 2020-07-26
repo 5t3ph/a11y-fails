@@ -180,7 +180,7 @@ main:focus {
 .form {
   position: relative;
   width: 40ch;
-  max-width: 100%;
+  max-width: calc(80vw - 2rem);
   margin: 5vh auto;
   display: grid;
   grid-gap: 0.5rem;
@@ -220,6 +220,8 @@ textarea {
   border-bottom-color: #9a7a54;
   color: inherit;
   padding: 0.25em;
+  font-size: 1.125rem;
+  font-family: sans-serif;
 }
 
 input:focus,
