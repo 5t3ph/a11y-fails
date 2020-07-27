@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <title>a11y Fails</title>
   </head>
   <body>
     <ul class="nav">
@@ -19,13 +20,13 @@
       <h1><span>a11y</span> Fails</h1>
     </div>
     <div class="main">
-      <h3>Product List</h3>
+      <h2>Product List</h2>
       <aside class="products">
         <div class="card">
           <img
             src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&h=200&q=60"
           />
-          <h2>Item 1</h2>
+          <h3>Item 1</h3>
           <p>
             Sesame snaps gummi bears macaroon sweet chocolate cake lemon drops
             donut. Marzipan lollipop gummies chocolate bar jelly gummies icing
@@ -37,7 +38,7 @@
           <img
             src="https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=200&q=60"
           />
-          <h2>Item 2</h2>
+          <h3>Item 2</h3>
           <p>
             Biscuit chocolate powder cheesecake powder candy canes soufflé
             lollipop. Macaroon donut danish candy canes icing.
@@ -48,7 +49,7 @@
           <img
             src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&h=200&q=60"
           />
-          <h2>Item 3</h2>
+          <h3>Item 3</h3>
           <p>
             Caramels chocolate halvah ice cream macaroon cupcake. Chupa chups
             cotton candy lemon drops. Carrot cake brownie topping biscuit.
@@ -60,15 +61,16 @@
       <div class="form">
         <h2>Sign Up</h2>
 
-        <label>Name</label>
-        <input type="text" />
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
 
-        <label>Email</label>
-        <input type="email" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
 
+        <label for="message"></label>
         <textarea
-          name=""
-          id=""
+          name="message"
+          id="message"
           cols="30"
           rows="3"
           placeholder="Message"
