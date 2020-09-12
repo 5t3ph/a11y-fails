@@ -89,7 +89,6 @@ p {
 .nav a {
   color: #fff;
   padding: 0 0.5em;
-  outline: none;
 }
 
 .button {
@@ -102,10 +101,6 @@ p {
   color: var(--button-text-accessible);
   padding: 0.25em 0.5em;
   border-radius: 4px;
-}
-
-.button:focus {
-  outline: none;
 }
 
 .products {
@@ -175,9 +170,13 @@ textarea {
   font-family: sans-serif;
 }
 
+.nav a:focus,
+button:focus,
 input:focus,
 textarea:focus {
-  outline: none;
+  outline: auto;
+  outline-style: dashed;
+  outline-offset: .1rem;
 }
 
 textarea::placeholder {
