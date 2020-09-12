@@ -1,3 +1,10 @@
+:root {
+  --page-background-accessible: #9A2878;
+  --section-heading-accessible: #90182E;
+  --paragraph-text-accessible: #683B3C;
+  --button-text-accessible: #881666;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +12,8 @@
 body {
   font-family: sans-serif;
   background-color: moccasin;
-  color: #875759;
+  /* color: #875759; */
+  color: var(--paragraph-text-accessible);
   text-align: center;
   margin: 0;
 }
@@ -23,7 +31,8 @@ h1,
 h2,
 h3,
 h4 {
-  color: #f34f6d;
+  /* color: #f34f6d; */
+  color: var(--section-heading-accessible);
 }
 
 h1 {
@@ -67,7 +76,8 @@ p {
 .nav,
 .nav ul {
   list-style: none;
-  background-color: #cd56aa;
+  /* background-color: #cd56aa; */
+  background-color: var(--page-background-accessible);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +98,8 @@ p {
   justify-content: center;
   background: transparent;
   border: 2px solid currentColor;
-  color: #cd56aa;
+  /* color: #cd56aa; */
+  color: var(--button-text-accessible);
   padding: 0.25em 0.5em;
   border-radius: 4px;
 }
