@@ -12,6 +12,7 @@
     <title>A11y Fails</title>
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <nav role="navigation">
       <ul class="nav">
         <li><a href="/about">About</a></li>
@@ -22,7 +23,7 @@
     <header class="header">
       <h1><span>a11y</span> Fails</h1>
     </header>
-    <main class="main" role="main" id="main">
+    <main class="main" role="main" id="main" tabindex="-1">
       <h2 class="h2">Product List</h2>
       <ul class="products" role="list">
         <li class="card">
