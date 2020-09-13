@@ -43,6 +43,22 @@ h3,
   font-size: 1.5rem;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .5rem;
+  transform: translateY(-10em);
+  transition: transform 0.25s ease-in;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
+  color: var(--nav-background-accessible);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 @keyframes colorFill {
   0% {
     color: transparent;
@@ -75,6 +91,10 @@ p {
   width: 120ch;
   max-width: 100%;
   margin: 5vh auto;
+}
+
+.main:focus {
+  outline: none;
 }
 
 .nav,
