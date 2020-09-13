@@ -95,6 +95,10 @@ p {
   padding: 0 0.5em;
 }
 
+.nav a:hover {
+  text-decoration: none;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -106,6 +110,13 @@ p {
   padding: 0.25em 0.5em;
   border-radius: 4px;
   text-decoration: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: var(--banner-fill-accessible);
+  color: rgb(255, 255, 255);
+  border-color: var(--banner-fill-accessible);
 }
 
 .products {
@@ -177,12 +188,18 @@ textarea {
   font-family: sans-serif;
 }
 
-.nav a:focus,
+.nav a:focus {
+  outline: #fff;
+  outline-style: dashed;
+  outline-offset: .1rem;
+}
+
+
 button:focus,
 a:focus,
 input:focus,
 textarea:focus {
-  outline: auto;
+  outline: var(--section-heading-accessible);
   outline-style: dashed;
   outline-offset: .1rem;
 }
