@@ -3,6 +3,7 @@
   --section-heading-accessible: #90182E;
   --paragraph-text-accessible: #683B3C;
   --button-text-accessible: #881666;
+  --banner-fill-accessible: #8C182D;
 }
 
 * {
@@ -42,14 +43,14 @@ h1 {
 @keyframes colorFill {
   0% {
     color: transparent;
-    -webkit-text-stroke: 2px #f34f6d;
+    -webkit-text-stroke: 2px var(--banner-fill-accessible);
   }
   20% {
     color: transparent;
-    -webkit-text-stroke: 2px #f34f6d;
+    -webkit-text-stroke: 2px var(--banner-fill-accessible);
   }
   100% {
-    color: #f34f6d;
+    color: var(--banner-fill-accessible);
   }
 }
 
@@ -57,7 +58,7 @@ h1 {
   h1 span {
     -webkit-animation: colorFill 2s ease-in 100ms alternate forwards infinite;
     animation: colorFill 2s ease-in 100ms alternate forwards infinite;
-    -webkit-text-stroke: 2px #f34f6d;
+    -webkit-text-stroke: 2px var(--banner-fill-accessible);
     color: transparent;
   }
 }
