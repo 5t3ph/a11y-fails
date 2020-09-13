@@ -23,11 +23,23 @@ h1,
 h2,
 h3,
 h4 {
-  color: #f34f6d;
+  /* ✅ Adjust color contrast to over 3:1 */
+  color: #ec4564;
 }
 
 h1 {
   font-size: 6rem;
+}
+
+/* 🚨 Add class for purposes of font-size adjustment */
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.5rem;
 }
 
 @keyframes colorFill {
@@ -46,15 +58,41 @@ h1 {
 
 @supports (-webkit-text-stroke: 1px black) {
   h1 span {
-    -webkit-animation: colorFill 2s ease-in 100ms alternate forwards infinite;
-    animation: colorFill 2s ease-in 100ms alternate forwards infinite;
+    /* 🚨 Remove `infinite`, only allow 1 run of animation */
+    /* https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide */
+    -webkit-animation: colorFill 2s ease-in 100ms forwards;
+    animation: colorFill 2s ease-in 100ms forwards;
     -webkit-text-stroke: 2px #f34f6d;
     color: transparent;
   }
 }
 
+/* 🚨 Increase line-height to minimum 1.5 */
+/* https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html */
 p {
-  line-height: 1.3;
+  line-height: 1.5;
+}
+
+/* 🚨 Skip link styles */
+.skip-link {
+  left: 0;
+  padding: 0.75em;
+  position: fixed;
+  top: 0;
+  transform: translateY(-10em);
+  transition: transform 0.2s ease-in-out;
+  font-size: 1.125rem;
+  background-color: #fff;
+  color: #b63d92;
+}
+.skip-link:focus {
+  transform: translateY(0em);
+}
+
+/* 🚨 Visible focus not needed, but would otherwise be visible 
+due to placement of `tabIndex="-1"` */
+main:focus {
+  outline: none;
 }
 
 .header,
@@ -67,7 +105,8 @@ p {
 .nav,
 .nav ul {
   list-style: none;
-  background-color: #cd56aa;
+  /* ✅ Adjust color contrast to over 4.5:1 */
+  background-color: #b63d92;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +118,8 @@ p {
 .nav a {
   color: #fff;
   padding: 0 0.5em;
-  outline: none;
+  /* Removed `outline: none` to allow a visible focus state */
+  /* https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html */
 }
 
 .button {
@@ -88,20 +128,35 @@ p {
   justify-content: center;
   background: transparent;
   border: 2px solid currentColor;
+  /* ✅ Adjust font-size to over 18.66 to qualify as "large text" */
+  font-size: 1.18rem;
   color: #cd56aa;
   padding: 0.25em 0.5em;
   border-radius: 4px;
+  /* 🎨 Added missed style post-conversion to an `a` element */
+  text-decoration: none;
+  /* 🎨 Enhancement of switch to focus/hover state */
+  transition: 180ms all ease-in;
 }
 
-.button:focus {
-  outline: none;
+.button:focus,
+.button:hover {
+  /* Keep an outline for visibility in Windows High Contrast mode */
+  /* https://sarahmhigley.com/writing/whcm-quick-tips/ */
+  outline-color: transparent;
+  outline-style: solid;
+
+  background-color: #cd56aa;
+  color: #fff;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   grid-gap: 1rem;
-  margin-bottom: 4rem;
+  /* 🎨 Spacing adjustments from changing element to a `ul` */
+  margin: 0 0 4rem;
+  padding-left: 0;
 }
 
 .card {
@@ -128,8 +183,12 @@ p {
   max-width: calc(80vw - 2rem);
   margin: 5vh auto;
   display: grid;
-  grid-gap: 0.5rem;
   text-align: left;
+}
+
+/* 🎨 Improve spacing between textarea and submit button */
+.form :last-child {
+  margin-top: 2rem;
 }
 
 @keyframes rock {
@@ -150,16 +209,21 @@ p {
   height: 100%;
   z-index: -1;
   border: 2px solid #cd56aa;
-  animation: rock 1s ease-in-out alternate forwards infinite;
+  /* 🚨 Remove `infinite`, only allow 4 runs of animation totaling < 5 seconds */
+  /* https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide */
+  -webkit-animation: rock 1s ease-in-out alternate forwards 4;
+  animation: rock 1s ease-in-out alternate forwards 4;
 }
 
 input,
 textarea {
   background: transparent;
-  border: none;
-  border-bottom: 1px solid #e7c296;
+  /* 🚨 Adjust color contrast of input border to over 3:1 */
+  /* https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html */
+  border: 1px solid transparent;
+  border-bottom-color: #9a7a54;
   color: inherit;
-  padding: 0 0 0.25em;
+  padding: 0.25em;
   font-size: 1.125rem;
   font-family: sans-serif;
 }
@@ -167,20 +231,37 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
+  /* 🚨 Create visible focus state, with contrast of at least 3:1  */
+  /* https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html */
+  border-color: #9a7a54;
 }
 
-textarea::placeholder {
-  color: inherit;
-  font-family: sans-serif;
-  font-size: 0.9rem;
-}
+/* 🎨 Removed unneeded :placeholder style post-adding proper HTML label */
 
 label {
   font-size: 0.9rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+/* 🚨 Increase spacing to improve visual recognition of labels and field groups */
+* + label {
+  margin-top: 1.75rem;
 }
 
 .footer {
   margin-top: 4rem;
   padding-bottom: 1rem;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/* https://www.w3.org/TR/WCAG21/#seizures-and-physical-reactions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
