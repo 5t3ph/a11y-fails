@@ -1,5 +1,5 @@
 :root {
-  --page-background-accessible: #9A2878;
+  --nav-background-accessible: #9A2878;
   --section-heading-accessible: #90182E;
   --paragraph-text-accessible: #683B3C;
   --button-text-accessible: #881666;
@@ -81,11 +81,11 @@ p {
 .nav ul {
   list-style: none;
   /* background-color: #cd56aa; */
-  background-color: var(--page-background-accessible);
+  background-color: var(--nav-background-accessible);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem;
+  padding: .5rem;
   margin: 0;
   align-items: center;
 }
@@ -173,17 +173,19 @@ p {
   width: 100%;
   height: 100%;
   z-index: -1;
-  border: 2px solid #cd56aa;
-  animation: rock 1s ease-in-out alternate forwards infinite;
+  border: 2px solid var(--banner-fill-accessible);
+  -webkit-animation: rock 1s ease-in-out alternate forwards 3.5;
+  animation: rock 1s ease-in-out alternate forwards 3.5;
+
 }
 
 input,
 textarea {
   background: transparent;
-  border: none;
-  border-bottom: 1px solid #e7c296;
+  border: 1px solid transparent;
+  border-bottom-color: 1px solid var(--paragraph-text-accessible);
   color: inherit;
-  padding: 0 0 0.25em;
+  padding: 0.25em;
   font-size: 1.125rem;
   font-family: sans-serif;
 }
@@ -202,12 +204,6 @@ textarea:focus {
   outline: var(--section-heading-accessible);
   outline-style: dashed;
   outline-offset: .1rem;
-}
-
-textarea::placeholder {
-  color: inherit;
-  font-family: sans-serif;
-  font-size: 0.9rem;
 }
 
 label {
