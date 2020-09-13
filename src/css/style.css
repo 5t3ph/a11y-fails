@@ -46,14 +46,14 @@ h3,
 @keyframes colorFill {
   0% {
     color: transparent;
-    -webkit-text-stroke: 2px var(--banner-fill-accessible);
+    -webkit-text-stroke: 2px var(--section-heading-accessible);
   }
   20% {
     color: transparent;
-    -webkit-text-stroke: 2px var(--banner-fill-accessible);
+    -webkit-text-stroke: 2px var(--section-heading-accessible);
   }
   100% {
-    color: var(--banner-fill-accessible);
+    color: var(--section-heading-accessible);
   }
 }
 
@@ -61,7 +61,7 @@ h3,
   h1 span {
     -webkit-animation: colorFill 2s ease-in 100ms forwards;
     animation: colorFill 2s ease-in 100ms forwards;
-    -webkit-text-stroke: 2px var(--banner-fill-accessible);
+    -webkit-text-stroke: 2px var(--section-heading-accessible);
     color: transparent;
   }
 }
@@ -105,13 +105,16 @@ p {
   color: var(--button-text-accessible);
   padding: 0.25em 0.5em;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   grid-gap: 1rem;
-  margin-bottom: 4rem;
+  margin: 0 0 4rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 .card {
@@ -176,6 +179,7 @@ textarea {
 
 .nav a:focus,
 button:focus,
+a:focus,
 input:focus,
 textarea:focus {
   outline: auto;
