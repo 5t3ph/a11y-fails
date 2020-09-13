@@ -128,8 +128,8 @@ main:focus {
   justify-content: center;
   background: transparent;
   border: 2px solid currentColor;
-  /* 🚩 aXe is not detecting the boldness of the font in use */
-  /* There isn't really a contrast fail because this is 16px and bold */
+  /* ✅ Adjust font-size to over 18.66 to qualify as "large text" */
+  font-size: 1.18rem;
   color: #cd56aa;
   padding: 0.25em 0.5em;
   border-radius: 4px;
