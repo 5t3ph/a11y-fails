@@ -208,6 +208,7 @@ textarea {
   padding: 0.25em;
   font-size: 1.125rem;
   font-family: sans-serif;
+  margin-bottom: 1rem;
 }
 
 .nav a:focus {
